@@ -1,0 +1,36 @@
+<nav>
+    <div class="navbar">
+        <ul>
+            <li class="<%= navbtn=='home' ? 'current' : '' %>"><a href="/home">Home</a></li>
+            <li class="<%= navbtn=='about' ? 'current' : '' %>"><a  href="/about">About Us</a></li>
+            <% if(isLoggedInAsAdmin){ %>
+            <li class="dropdown <%= navbtn=='register' ? 'current' : '' %>">
+                Register
+                <ul>
+                    <li><a href="/batsman/register">Batsman</a></li>
+                    <li><a href="/bowler/register">Bowler</a></li>
+                </ul>
+
+            </li>
+            <% } %>
+            <% if(isLoggedInAsAdmin || isLoggedInAsUser){ %>
+            <li class="dropdown <%= navbtn=='allplayers' ? 'current' : '' %>">
+                View
+                <ul>
+                    <li><a href="/batsman/displayall">Batsman</a></li>
+                    <li><a href="/bowler/displayall">Bowlers</a></li>
+                </ul>
+            </li>
+            <% } %>
+        </ul>
+        <ul>
+            <% if(isLoggedInAsAdmin || isLoggedInAsUser){ %>
+            <li class="<%= navbtn=='logout' ? 'current' : '' %>"><a href="<%= isLoggedInAsAdmin ? '/admin/logout' : '/user/logout'%>">Log Out</a></li>
+            <% } %>
+            <% if(!isLoggedInAsAdmin && !isLoggedInAsUser){ %>
+            <li class="<%= navbtn=='signup' ? 'current' : '' %>"><a href="/user/signup">Sign Up</a></li>
+            <li class="<%= navbtn=='login' ? 'current' : '' %>"><a href="/user/login">Log In</a></li>
+            <% } %>
+        </ul>
+    </div>
+</nav>

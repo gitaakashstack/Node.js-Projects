@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=pageTitle%></title>
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/display_style.css">
+</head>
+<body>
+    <%- include('./partial/nav.ejs') %>
+    <h3 class="header"><%= player.name %> is successfully registered</h3>
+    <section>
+        <div class="card">
+            <h4>Current Profile</h4>
+            <ul>
+                <li><span class="tooltip">Name</span> <%= player.name %></li>
+                <li><span class="tooltip">Runs </span><%= player.runs %></li>
+                <li><span class="tooltip">Bat. Avg. </span> <%= player.avg %></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/display_all_style.css">
+    <link rel="stylesheet" href="/nav.css">
+    <link rel="stylesheet" href="/pagination.css">
+</head>
+<body>
+    <%- include('./partial/nav.ejs') %>
+    <section>
+        <div class="viewall">
+            <% for(let player of allPlayers) { %>
+            <div class="card">
+                <div class="imgcard">
+                    <img src="/<%= player.imageUrl %>" alt="<%=player.name%>">
+                    <div class="caption"><%= player.name %></div>
+                </div>
+                <ul>
+                    <li><span class="tooltip">Team </span><%= player.team.country %></li>
+                    <li><span class="tooltip">Wickets </span><%= player.wkts %></li>
+                    <li><span class="tooltip">Bow. Avg. </span> <%= player.avg %></li>
+                </ul>
+                <% if(isLoggedInAsAdmin){ %>
+                <div class="btns">
+                    <p><a href="/bowler/update/<%=player._id%>">Update Profile</a></p>
+                    <p><a href="/bowler/delete/<%=player._id%>">Delete Profile</a></p>
+                </div>
+                <% } %>
+            </div>
+            <% } %>
+        </div>
+    </section>
+    <%- include('./partial/pagination.ejs') %>
+</body>
+</html>

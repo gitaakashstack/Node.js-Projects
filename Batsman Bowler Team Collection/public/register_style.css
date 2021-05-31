@@ -1,0 +1,30 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    line-height: 1.6;
+}
+ul{
+    list-style:none;
+}
+a{
+   text-decoration:none;
+}
+input#plteam{
+    outline:none;
+    text-transform: uppercase;
+}
+main{
+    margin:20px;
+}
+input{
+    padding:5px;
+    margin-top: 5px;
+}
+label{
+    margin-top: 20px;
+}
+main label,main input{
+    display: block;
+    width:200px;
+}

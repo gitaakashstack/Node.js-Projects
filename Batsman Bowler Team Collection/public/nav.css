@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+nav{
+    padding:20px;
+    background-color: rgb(102, 87, 238);
+    color: white;
+}
+li{
+    list-style-type: none;
+}
+nav>.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+nav>.navbar>ul:first-child{
+    display: grid;
+    grid-template-columns: repeat(4,minmax(80px,auto));
+    justify-content: start;
+    align-items: center;
+}
+nav>.navbar>ul:last-child{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(80px,auto));
+    justify-content: start;
+    align-items: center;
+}
+nav>.navbar>ul>li{
+    text-align: center;
+    padding:5px 10px;
+    cursor: pointer;
+}
+nav>.navbar>ul>li:hover{
+    background-color: rgb(147, 136, 243);
+    transition: background-color 0.5s;
+}
+nav>.navbar>ul>li>a{
+    display: block;
+}
+nav .current{
+    background-color: rgb(195, 206, 221);
+    color:black;
+}
+
+nav>.navbar>ul>.dropdown{
+    position: relative;
+    cursor: pointer;
+}
+nav>.navbar>ul>.dropdown:hover>ul{
+    display: block;
+}
+nav>.navbar>ul>.dropdown>ul{
+    display: none;
+    position: absolute;
+    width: 100%;
+    top:100%;
+    left:0px;
+    color:black;
+    background-color: rgb(195, 206, 221);
+}
+nav>.navbar>ul>.dropdown>ul>li{
+    padding:5px 10px;
+}
+nav>.navbar>ul>.dropdown>ul>li:hover{
+    background-color: rgb(179, 172, 172);
+
+}

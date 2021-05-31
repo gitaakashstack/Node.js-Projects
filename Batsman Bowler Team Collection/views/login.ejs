@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="/nav.css">
+</head>
+<body>
+    <%- include('./partial/nav.ejs') %>
+    <main>
+        <p class=" error_msg <%= errorMsg ? 'show_error' : 'no_error' %>"><%= errorMsg %></p>
+        <form action="/user/login" method="POST">
+            <label for="username">Email</label>
+            <input type="email" name="email" placeholder="Enter Your Email" value="<%= errorMsg ? oldInput.email : '' %>" autofocus required>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter Your Password" value="<%= errorMsg ? oldInput.password : '' %>" required>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="submit">
+        </form>
+        <footer>
+        <div><a href="#">Forgot Password</a></div>
+        <div><a href="/admin/login">Admin Login</a></div>
+        </footer>
+    </main>
+    
+</body>
+</html>

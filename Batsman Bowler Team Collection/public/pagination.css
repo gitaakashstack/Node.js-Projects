@@ -1,0 +1,22 @@
+.pagination{
+    width: max-content;
+    text-align: center;
+    margin:15px auto;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+.pagination>a{
+    display:inline-block;
+    padding:0 5px;
+    background-color: rgb(54, 47, 47);
+    color:white;
+    margin:0 10px;
+}
+.pagination>a:hover,
+.pagination>a:active,
+.pagination>a.active{
+    background-color: rgb(22, 211, 94);
+    color:black
+}
